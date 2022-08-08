@@ -15,4 +15,3 @@ function changeColor(event) {
 
   spanEl.textContent = functionHexColor
 }
-//  console.log(spanRef);
