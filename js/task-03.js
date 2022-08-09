@@ -16,21 +16,30 @@ const images = [
   },
 ]
 
-const imageElements = []
-console.log(imageElements)
+// const imageElements = []
+// console.log(imageElements)
 
-images.forEach((image) => {
-  const liEl = document.createElement('li')
-  console.log(liEl)
-  const imageEl = document.createElement('img')
-  //console.log(imageEl)
-  imageEl.classList = 'image'
-  imageEl.src = image.url
-  imageEl.alt = image.alt
-  liEl.appendChild(imageEl)
-  imageElements.push(liEl.outerHTML)
-})
+// images.forEach((image) => {
+//   const liEl = document.createElement('li')
+//   console.log(liEl)
+//   const imageEl = document.createElement('img')
+//   //console.log(imageEl)
+//   imageEl.classList = 'image'
+//   imageEl.src = image.url
+//   imageEl.alt = image.alt
+//   liEl.appendChild(imageEl)
+//   imageElements.push(liEl.outerHTML)
+// })
+
+const listGallery = images
+  .map(
+    (image) =>
+      `<li><img src="${image.url}" alt="${image.alt}" class="image"></li>`,
+  )
+  .join('')
+
+console.log(listGallery)
 
 const imageList = document.querySelector('.gallery')
-imageList.insertAdjacentHTML('afterbegin', imageElements.join(''))
+imageList.insertAdjacentHTML('beforeend', listGallery)
 console.log(imageList)

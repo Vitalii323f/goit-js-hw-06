@@ -13,13 +13,13 @@ const listElements = ingredients.map((ingredient) => {
   //console.log(100, liEl)
   liEl.textContent = ingredient
   liEl.classList = 'item'
-  //console.log(111, liEl.outerHTML)
-  return liEl.outerHTML
+
+  return liEl
 })
 console.log(listElements)
 
 const ingList = document.querySelector('#ingredients')
-ingList.insertAdjacentHTML('afterbegin', listElements.join(''))
+ingList.append(...listElements)
 console.log(ingList)
 
 //-----------------------2 вариант-------------------------------
